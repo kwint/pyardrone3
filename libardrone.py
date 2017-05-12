@@ -398,7 +398,7 @@ def decode_navdata(packet):
             offset += struct.calcsize("c")
         # navdata_tag_t in navdata-common.h
         if id_nr == 0:
-            values = struct.unpack_from("IIfffIfffI", "".join(values))
+            values = struct.unpack_from("IIfffIfffI", b"".join(values))
             values = dict(
                 zip(['ctrl_state', 'battery', 'theta', 'phi', 'psi', 'altitude', 'vx', 'vy', 'vz', 'num_frames'],
                     values))

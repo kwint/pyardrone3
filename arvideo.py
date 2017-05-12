@@ -37,7 +37,7 @@ import struct
 import sys
 
 try:
-    import psyco
+    import PyPy
 except ImportError:
     print("Please install psyco for better video decoding performance.")
 

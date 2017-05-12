@@ -9,6 +9,4 @@ time.sleep(5)
 print("3")
 dr.land()
 print("4")
-while True:
-    dr.land()
-    time.sleep(1)
+dr.halt()

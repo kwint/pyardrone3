@@ -1,9 +1,10 @@
 
 
-Fork of Venthure python-ardrone. Currently tring to update it for python 3.6
-Currenlty tested and works:
-* drone.takeoff()
-* drone.land()
+Fork of Venthure python-ardrone. Updated for python 3.6. The following currenlty works:
+* Takeoff, landing and moving the drone around (all demo functions)
+
+Todo:
+* Video feed
 
 Getting Started:
 ----------------
@@ -54,8 +55,7 @@ Requirements:
 
 This software was tested with the following setup:
 
-  * Python 2.6.6
-  * Psyco 1.6 (recommended)
+  * Python 3.6
   * Pygame 1.8.1 (only for the demo)
   * Unmodified AR.Drone firmware 1.5.1
 
