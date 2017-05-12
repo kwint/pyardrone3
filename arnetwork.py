@@ -46,15 +46,16 @@ class ARDroneNetworkProcess(multiprocessing.Process):
         self.com_pipe = com_pipe
 
     def run(self):
+        package = "\x01\x00\x00\x00"
         video_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         video_socket.setblocking(0)
         video_socket.bind(('', libardrone.ARDRONE_VIDEO_PORT))
-        video_socket.sendto("\x01\x00\x00\x00", ('192.168.1.1', libardrone.ARDRONE_VIDEO_PORT))
+        video_socket.sendto(package.encode("utf-8"), ('192.168.1.1', libardrone.ARDRONE_VIDEO_PORT))
 
         nav_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         nav_socket.setblocking(0)
         nav_socket.bind(('', libardrone.ARDRONE_NAVDATA_PORT))
-        nav_socket.sendto("\x01\x00\x00\x00", ('192.168.1.1', libardrone.ARDRONE_NAVDATA_PORT))
+        nav_socket.sendto(package.encode("utf-8"), ('192.168.1.1', libardrone.ARDRONE_NAVDATA_PORT))
 
         stopping = False
         while not stopping:
